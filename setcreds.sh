@@ -14,4 +14,4 @@ if [ -z "$SECRETS_BUCKET_NAME" ]; then
 fi
 
 # Load the S3 secrets file contents into the environment variables
-eval $(aws s3 cp s3://${SECRETS_BUCKET_NAME}/credentials.txt - | sed 's/^/export /')
+eval $(aws s3 cp s3://${SECRETS_BUCKET_NAME}/credentials.txt - | /bin/sed 's/^/export /')
