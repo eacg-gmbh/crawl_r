@@ -111,21 +111,21 @@ namespace :versioneye do
     end
 
     # This crawl takes almost 7 hours
-    value = '0 1 * * *'
+    value = '0 15 * * *'
     if !value.to_s.empty?
       scheduler.cron value do
         NpmCrawlProducer.new '::npm::'
       end
     end
 
-    value = '1 1 * * *'
+    value = '1 15 * * *'
     if !value.to_s.empty?
       scheduler.cron value do
         NpmCrawlProducer.new '::crawl_scoped::'
       end
     end
 
-    value = '11 2 * * *'
+    value = '11 16 * * *'
     if !value.to_s.empty?
       scheduler.cron value do
         BowerCrawlProducer.new '::bower::'
@@ -146,7 +146,7 @@ namespace :versioneye do
       end
     end
 
-    value = '1 4 * * *'
+    value = '1 18 * * *'
     if !value.to_s.empty?
       scheduler.cron value do
         NugetCrawlProducer.new '::nuget::'
