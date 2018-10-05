@@ -6,7 +6,7 @@ class CommonCrawlWorker < Worker
     connection.start
     channel = connection.create_channel
     channel.prefetch(1)
-    queue   = channel.queue("common_crawl", :durable => true)
+    queue = channel.queue("common_crawl", :durable => true)
 
     multi_log " [*] CommonCrawlWorker waiting for messages in #{queue.name}. To exit press CTRL+C"
 
@@ -33,7 +33,7 @@ class CommonCrawlWorker < Worker
       GithubVersionCrawler.crawl
     elsif message.eql?('satis_1')
       base_url = GlobalSetting.get env, 'satis_base_url'
-      crawler  = SatisCrawler.new base_url, "Satis Page"
+      crawler = SatisCrawler.new base_url, "Satis Page"
       crawler.crawl
     elsif message.eql?('::github::')
       GithubCrawler.crawl
@@ -53,10 +53,10 @@ class CommonCrawlWorker < Worker
   private
 
 
-    def multi_log log_msg
-      puts log_msg
-      log.info log_msg
-    end
+  def multi_log log_msg
+    puts log_msg
+    log.info log_msg
+  end
 
 
 end
