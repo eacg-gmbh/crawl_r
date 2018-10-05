@@ -1,7 +1,7 @@
 class NpmCrawler < Versioneye::Crawl
 
   A_NPM_REGISTRY_INDEX = 'https://skimdb.npmjs.com/registry/_all_docs'
-  A_NPM_REGISTRY_URL    = 'http://registry.npmjs.org'
+  A_NPM_REGISTRY_URL    = 'https://registry.npmjs.org'
 
 
   def self.logger
