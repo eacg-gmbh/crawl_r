@@ -28,8 +28,9 @@ class BowerCrawlWorker < Worker
   def process_work package_name
     return nil if package_name.to_s.empty?
 
-    user = user_with_gh_token
-    token = user.github_token
+    # user = user_with_gh_token
+    # token = user.github_token
+    token = ENV['GHTOKEN']
 
     if package_name.eql?('::bower::')
       BowerStarter.crawl(token, 'https://bower.herokuapp.com/packages', true )
