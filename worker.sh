@@ -3,4 +3,4 @@
 source /app/setcreds.sh
 
 cd /app;
-/usr/local/bundle/bin/bundle exec rake versioneye:common_crawl_worker >> /dev/stdout 2>&1
+/usr/local/bundle/bin/bundle exec rake versioneye:$1 >> /dev/stdout 2>&1
