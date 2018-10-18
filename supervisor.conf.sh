@@ -4,8 +4,8 @@ cat >/etc/supervisord.conf <<EOF
 [supervisord]
 nodaemon=true
 
-[program:{$SV_PROG_NAME}]
-command=/bin/bash -l -c '{$SV_CMD}'
+[program:${SV_PROG_NAME}]
+command=/bin/bash -l -c '${SV_CMD}'
 autorestart=true
 stdout_logfile=/dev/stdout
 stdout_logfile_maxbytes=0
