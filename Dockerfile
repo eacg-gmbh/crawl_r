@@ -15,6 +15,6 @@ RUN rm -Rf /app; \
 ADD . /app
 
 RUN cd /app/ && bundle install; \
-    chmod +x /app/worker.sh /app/scheduler.sh /app/supervisord.conf.sh
+    chmod +x /app/worker.sh /app/scheduler.sh /app/supervisor.conf.sh
 
-CMD /app/supervisord.conf.sh
+CMD /app/supervisor.conf.sh
