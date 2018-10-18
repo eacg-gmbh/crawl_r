@@ -14,8 +14,7 @@ RUN rm -Rf /app; \
 
 ADD . /app
 
-RUN cp /app/supervisord.conf /etc/supervisord.conf; \
-    cd /app/ && bundle install; \
+RUN cd /app/ && bundle install; \
     chmod +x /app/worker.sh /app/scheduler.sh
 
-CMD /usr/bin/supervisord -c /etc/supervisord.conf
+CMD /app/suprevisor.conf.sh
